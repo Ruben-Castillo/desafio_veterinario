@@ -19,10 +19,11 @@
         <td><%= pet.name %></td>
         <td><%= pet.race %></td>
         <td><%= pet.birthdate %></td>
-        <td><%= pet.history_count%></td>
+        <td><%= pet_histories_count(pet)%></td>
         <td><%= link_to 'Show', pet %></td>
         <td><%= link_to 'Edit', edit_pet_path(pet) %></td>
         <td><%= link_to 'Destroy', pet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show pet history', pet_pet_histories_path(pet.id) %></td>
       </tr>
     <% end %>
   </tbody>

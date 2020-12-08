@@ -4,7 +4,8 @@ class PetHistoriesController < ApplicationController
   # GET /pet_histories
   # GET /pet_histories.json
   def index
-    @pet_histories = PetHistory.all
+    @pet_histories = PetHistory.where(pet_id: params[:pet_id])
+    @pet=Pet.find(params[:pet_id])
   end
 
   # GET /pet_histories/1
@@ -15,6 +16,7 @@ class PetHistoriesController < ApplicationController
   # GET /pet_histories/new
   def new
     @pet_history = PetHistory.new
+    @pet=Pet.find(params[:pet_id])
   end
 
   # GET /pet_histories/1/edit
@@ -69,6 +71,6 @@ class PetHistoriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pet_history_params
-      params.require(:pet_history).permit(:weight, :heigth, :description)
+      params.require(:pet_history).permit(:pet_id, :weight, :heigth, :description)
     end
 end

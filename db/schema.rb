@@ -10,14 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_31_205454) do
+ActiveRecord::Schema.define(version: 2020_12_08_153807) do
 
   create_table "pet_histories", force: :cascade do |t|
     t.float "weight"
-    t.string "heigth"
+    t.float "heigth"
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "pet_id"
+    t.index ["pet_id"], name: "index_pet_histories_on_pet_id"
   end
 
   create_table "pets", force: :cascade do |t|

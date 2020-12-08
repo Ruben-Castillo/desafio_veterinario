@@ -19,20 +19,46 @@
 <table>
   <thead>
     <tr>
-      <th>Peso promedio</th>
-      <th>Altura promedio</th>
-      <th>Peso Máximo</th>
-      <th>Altura Máxima</th>
+      <th>Peso promedio </th>
+      <th>Altura promedio </th>
+      <th>Altura máxima</th>
+      <th>Peso máximo</th>
     </tr>
   </thead>
 
   <tbody>
+   
     <tr>
-      <td><%= @pet.avg_weight %></td>
-      <td><%= @pet.avg_height %></td>
-      <td><%= @pet.max_weight %></td>
-      <td><%= @pet.max_height%></td>
+      <td> <%= prom_weight(@pet) %></td>
+      <td> <%= prom_heigth(@pet) %></td>
+      <td> <%= max_heigth(@pet) %></td>
+      <td> <%= max_weight(@pet) %></td>
     </tr>
+  </tbody>
+</table>
+
+
+
+
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Fecha visita </th>
+      <th>Peso </th>
+      <th>Altura</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pet_histories.each do |pet_history| %>
+    <tr>
+      <td><%= pet_history.created_at.to_date %></td>
+      <td><%= pet_history.weight %></td>
+      <td><%= pet_history.heigth %></td>
+    </tr>
+    <% end %>
   </tbody>
 </table>
 
