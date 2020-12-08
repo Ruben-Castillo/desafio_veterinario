@@ -12,6 +12,10 @@
   <% end %>
 
   <div class="field">
+    <%= form.hidden_field :client_id, value: @client.id %>
+  </div>
+
+  <div class="field">
     <%= form.label :name %>
     <%= form.text_field :name %>
   </div>

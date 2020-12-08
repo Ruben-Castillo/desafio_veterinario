@@ -62,5 +62,6 @@
   </tbody>
 </table>
 
+<%= link_to 'Show pet history', pet_pet_histories_path(@pet.id) %>
 <%= link_to 'Edit', edit_pet_path(@pet) %> |
-<%= link_to 'Back', pets_path %>
+<%= link_to 'Back', client_path(@pet.client_id) %>
